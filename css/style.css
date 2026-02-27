@@ -1,13 +1,228 @@
-* {
-    padding: 0;
-    margin: 0;
+:root {
+    --bg-color: #f2e6d6;      /* Lichte beige achtergrond */
+    --text-dark: #4a150e;     /* Donkerbruine/rode tekstkleur */
+    --btn-color: #838a71;     /* Olijfgroene knopkleur */
+    --font-main: 'Montserrat', sans-serif;
 }
 
-.test {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- Typografie --- */
+h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+}
+
+p {
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+/* --- Header & Navigatie --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.nav-links a.active {
+    border-bottom: 2px solid var(--text-dark);
+    padding-bottom: 2px;
+}
+
+.logo-container .logo {
+    height: 60px; /* Pas dit aan op basis van je logo formaat */
+    background-color: rgba(0,0,0,0.05); /* Tijdelijke achtergrond voor lege img */
+    min-width: 150px;
+}
+
+.btn-reserveer {
+    background-color: var(--btn-color);
+    color: white;
+    padding: 0.6rem 1.5rem;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reserveer:hover {
+    background-color: #717860;
+}
+
+/* --- Lay-out Secties (Hero & About) --- */
+.hero-section, .about-section {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: aqua;
-    height: 200px;
+    justify-content: space-between;
+    padding: 4rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 4rem;
+}
+
+.text-content {
+    flex: 1;
+    position: relative;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.image-content {
+    flex: 1;
+}
+
+/* --- Afbeeldingen & Doodles styling --- */
+.hero-img, .about-img {
     width: 100%;
+    border-radius: 30px;
+    object-fit: cover;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background-color: rgba(0,0,0,0.05); /* Tijdelijke achtergrond voor lege img */
+    min-height: 350px; /* Zorgt dat het vak zichtbaar is als src leeg is */
+}
+
+.doodle {
+    position: absolute;
+    opacity: 0.8;
+    background-color: rgba(0,0,0,0.05); /* Tijdelijke achtergrond voor lege img */
+    min-width: 100px;
+    min-height: 100px;
+}
+
+.doodle-pizza {
+    bottom: -120px;
+    left: 20px;
+    width: 180px;
+}
+
+.doodle-slice {
+    bottom: -150px;
+    right: 50px;
+    width: 150px;
+}
+
+/* --- Footer --- */
+footer {
+    border-top: 1px solid rgba(74, 21, 14, 0.2);
+    margin-top: 5rem;
+    padding: 3rem 5%;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.footer-logo img {
+    height: 50px;
+    background-color: rgba(0,0,0,0.05); /* Tijdelijke achtergrond voor lege img */
+    min-width: 120px;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.footer-address h3, .footer-contact h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.underline-link {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    line-height: 1.6;
+}
+
+/* --- Responsief (voor mobiele schermen) --- */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .hero-section, .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 5%;
+    }
+
+    /* Draai de volgorde om op mobiel voor de 'over ons' sectie */
+    .about-section {
+        flex-direction: column-reverse;
+    }
+
+    .text-right {
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    .doodle {
+        display: none; /* Verbergt de tekeningen op kleine schermen voor rust */
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
