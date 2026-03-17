@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="css/style.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Da Cintarinni - reservering</title>
+    </head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="index.html">Da Cintarinni</a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="menu.html">Menu</a></li>
+    <li><a href="reservering.html" class="nav-cta">Reserveer Nu</a></li>
+  </ul>
+</nav>
+
+<div class="search-wrap">
+  <input type="text" placeholder="Zoek naar pizza's, pasta, desserts…"/>
+  <button>🔍 Zoeken</button>
+</div>
+
+<!-- HERO -->
+<div class="res-hero">
+  <div class="res-hero-bg"></div>
+  <div class="res-hero-content">
+    <div class="eyebrow">Uw tafel reserveren</div>
+    <h1>Welkom bij <span>Da Cintarinni</span></h1>
+    <p>Reserveer eenvoudig een tafel en geniet van een onvergetelijke Italiaanse avond in Amsterdam. We kijken ernaar uit u te verwelkomen!</p>
+  </div>
+</div>
+
+<!-- FORMULIER + INFO -->
+<div class="res-wrap">
+
+  <!-- INFO -->
+  <div class="res-info">
+    <h2>Ons Restaurant</h2>
+
+    <div class="info-blok">
+      <div class="info-icon">📍</div>
+      <div>
+        <h4>Adres</h4>
+        <p>Dorpsstraat 36, 6681 BN Bemmel</p>
+      </div>
+    </div>
+    <div class="info-blok">
+      <div class="info-icon">🕐</div>
+      <div>
+        <h4>Openingstijden</h4>
+        <p>Maandag – Donderdag: 12:00 – 22:00<br/>Vrijdag – Zaterdag: 12:00 – 23:00<br/>Zondag: 13:00 – 21:30</p>
+      </div>
+    </div>
+    <div class="info-blok">
+      <div class="info-icon">📞</div>
+      <div>
+        <h4>Telefoon</h4>
+        <p>020 – 123 4567</p>
+      </div>
+    </div>
+    <div class="info-blok">
+      <div class="info-icon">✉️</div>
+      <div>
+        <h4>E-mail</h4>
+        <p>reservering@DaCintarinni.nl</p>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="info-blok">
+      <div class="info-icon">ℹ️</div>
+      <div>
+        <h4>Reserveringsbeleid</h4>
+        <p>Reserveringen worden tot 15 minuten voor aanvang bewaard. Annuleren kan tot 24 uur van tevoren kosteloos via e-mail of telefoon.</p>
+      </div>
+    </div>
+
+    <img class="foto-small" src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=700&q=80" alt="Restaurant interieur"/>
+  </div>
+
+  <!-- FORMULIER -->
+  <div class="res-form-card">
+    <div class="form-header">
+      <h3>Tafel Reserveren</h3>
+      <p>Vul het formulier in en wij bevestigen uw reservering.</p>
+    </div>
+    <div class="form-body" id="formBody">
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Voornaam</label>
+          <input type="text" placeholder="Jan"/>
+        </div>
+        <div class="form-group">
+          <label>Achternaam</label>
+          <input type="text" placeholder="De Vries"/>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>E-mailadres</label>
+          <input type="email" placeholder="jan@example.nl"/>
+        </div>
+        <div class="form-group">
+          <label>Telefoonnummer</label>
+          <input type="tel" placeholder="06 – 12 34 56 78"/>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Datum</label>
+        <input type="date" id="datumInput"/>
+      </div>
+
+      <div class="form-group">
+        <label>Aantal Personen</label>
+        <div class="personen-grid">
+          <input type="radio" name="personen" id="p1" value="1"/>
+          <label for="p1" class="persoon-btn">1</label>
+          <input type="radio" name="personen" id="p2" value="2"/>
+          <label for="p2" class="persoon-btn">2</label>
+          <input type="radio" name="personen" id="p3" value="3"/>
+          <label for="p3" class="persoon-btn">3</label>
+          <input type="radio" name="personen" id="p4" value="4"/>
+          <label for="p4" class="persoon-btn">4</label>
+          <input type="radio" name="personen" id="p5" value="5"/>
+          <label for="p5" class="persoon-btn">5</label>
+          <input type="radio" name="personen" id="p6" value="6"/>
+          <label for="p6" class="persoon-btn">6+</label>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Tijdstip</label>
+        <div class="tijdslot-grid">
+          <input type="radio" name="tijdstip" id="t1200" value="12:00"/>
+          <label for="t1200" class="tijd-btn">12:00</label>
+          <input type="radio" name="tijdstip" id="t1230" value="12:30"/>
+          <label for="t1230" class="tijd-btn">12:30</label>
+          <input type="radio" name="tijdstip" id="t1300" value="13:00"/>
+          <label for="t1300" class="tijd-btn">13:00</label>
+          <input type="radio" name="tijdstip" id="t1800" value="18:00" disabled/>
+          <label for="t1800" class="tijd-btn vol">18:00</label>
+          <input type="radio" name="tijdstip" id="t1830" value="18:30"/>
+          <label for="t1830" class="tijd-btn">18:30</label>
+          <input type="radio" name="tijdstip" id="t1900" value="19:00"/>
+          <label for="t1900" class="tijd-btn">19:00</label>
+          <input type="radio" name="tijdstip" id="t1930" value="19:30"/>
+          <label for="t1930" class="tijd-btn">19:30</label>
+          <input type="radio" name="tijdstip" id="t2000" value="20:00" disabled/>
+          <label for="t2000" class="tijd-btn vol">20:00</label>
+          <input type="radio" name="tijdstip" id="t2030" value="20:30"/>
+          <label for="t2030" class="tijd-btn">20:30</label>
+        </div>
+        <p style="font-size:0.75rem;color:var(--grijs);margin-top:.5rem">Doorgestreepte tijden zijn vol.</p>
+      </div>
+
+      <div class="form-group">
+        <label>Speciale Wensen of Allergieën</label>
+        <textarea placeholder="Bijv. kinderstoel nodig, vegetarisch menu, verjaardag vieren…"></textarea>
+      </div>
+
+      <button class="submit-btn" type="submit">✓ &nbsp;Reservering Bevestigen</button>
+    </div>
+
+    <!-- BEVESTIGING -->
+    <div class="bevestiging" id="bevestiging">
+      <div class="check">🎉</div>
+      <h3>Reservering Ontvangen!</h3>
+      <p>Grazie mille! Uw reservering is geregistreerd. U ontvangt binnen enkele minuten een bevestigingsmail.</p>
+      <a href="index.html" class="terug-btn">← Terug naar Home</a>
+    </div>
+  </div>
+
+</div><!-- /res-wrap -->
+
+<!-- DIENSTEN -->
+<div class="diensten">
+  <h2>Wat Wij Aanbieden</h2>
+  <div class="diensten-grid">
+    <div class="dienst-card">
+      <div class="dienst-icon">🎂</div>
+      <h4>Verjaardagen &amp; Feesten</h4>
+      <p>Wij organiseren graag uw verjaardag of jubileum. Vraag naar ons feestmenu.</p>
+    </div>
+    <div class="dienst-card">
+      <div class="dienst-icon">🏢</div>
+      <h4>Zakelijke Diners</h4>
+      <p>Privé-zaal beschikbaar voor groepen tot 30 personen. Inclusief op maat menu.</p>
+    </div>
+    <div class="dienst-card">
+      <div class="dienst-icon">🌹</div>
+      <h4>Romantisch Diner</h4>
+      <p>Speciale tafel opstelling met kaarsen en bloemen op aanvraag.</p>
+    </div>
+    <div class="dienst-card">
+      <div class="dienst-icon">🧑‍🍳</div>
+      <h4>Kookworkshops</h4>
+      <p>Leer zelf pizza deeg kneden en belegen onder begeleiding van onze chef.</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Da Cintarinni</h4>
+      <p>Authentieke Napolitaanse pizza's bereid met liefde en de beste Italiaanse ingrediënten.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Navigatie</h4>
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="reservering.html">Reservering</a>
+    </div>
+    <div class="footer-col">
+      <h4>Openingstijden</h4>
+      <p>Ma – Do: 12:00 – 22:00</p>
+      <p>Vr – Za: 12:00 – 23:00</p>
+      <p>Zondag: 13:00 – 21:30</p>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>📍 Dorpsstraat 36, 6681 BN Bemmel</p>
+      <p>📞 020 – 123 4567</p>
+      <p>✉️ info@DaCintarinni.nl</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2025 Da Cintarinni – Alle rechten voorbehouden.</div>
+</footer>
