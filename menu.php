@@ -1,3 +1,8 @@
+<?php
+  include('dbcalls/conn.php');
+  include('dbcalls/menukaart/read.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,11 +14,12 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">Da Cintarinni</a>
+  <a class="nav-logo" href="index.php">Da Cintarinni</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="menu.html" class="actief">Menu</a></li>
-    <li><a href="reservering.html" class="nav-cta">Reserveer Nu</a></li>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="menu.php">Menu</a></li>
+    <li><a href="reservering.php">Reservering</a></li>
+    <li><a href="login.php" class="actief nav-cta">Inloggen</a></li>
   </ul>
 </nav>
 
@@ -28,6 +34,9 @@
   <h1>Onze <span>Menukaart</span></h1>
   <p>Alle gerechten worden bereid met verse, seizoensgebonden ingrediënten. Onze pizza's worden gebakken in een traditionele houtgestookte oven op 450°C.</p>
 </div>
+<?php
+  var_dump($result);
+?>
 
 <!-- FILTER -->
 <div class="filter-bar">
@@ -51,14 +60,22 @@
     <div class="categorie-header"><span class="icon">🍕</span><h2>Pizza's</h2></div>
     <div class="menu-grid">
 
+    <?php foreach ($result as $menuitem){ ?>
       <div class="menu-item">
-        <img class="menu-item-img" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=200&q=80" alt="Margherita"/>
+        
+
+        <img class="menu-item-img" src="<?php echo $menuitem['afbeelding']?>" alt="Margherita"/>
         <div class="menu-item-body">
-          <h3>Margherita Classica</h3>
-          <p>San Marzano tomaten, fior di latte, verse basilicum, olijfolie</p>
+          <h3><?php echo $menuitem['naam'] ?></h3>
+          <p><?php echo $menuitem['omschrijving'] ?></p>
           <div class="menu-item-meta"><span class="menu-item-prijs">€13,50</span><span class="menu-tag vega">🌿 Vega</span></div>
         </div>
       </div>
+     <?php } ?>
+
+<!-- vanaf hier word de code onoverbodig-->
+
+
 
       <div class="menu-item">
         <img class="menu-item-img" src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=200&q=80" alt="Diavola"/>
@@ -267,9 +284,9 @@
     </div>
     <div class="footer-col">
       <h4>Navigatie</h4>
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="reservering.html">Reservering</a>
+      <a href="index.php">Home</a>
+      <a href="menu.php">Menu</a>
+      <a href="reservering.php">Reservering</a>
     </div>
     <div class="footer-col">
       <h4>Openingstijden</h4>
@@ -284,7 +301,7 @@
       <p>✉️ info@daCintarinni.nl</p>
     </div>
   </div>
-  <div class="footer-bottom">© 2025 Da Cintarinni – Alle rechten voorbehouden.</div>
+  <div class="footer-bottom">© 2026 Da Cintarinni – Alle rechten voorbehouden.</div>
 </footer>
 </body>
 </html>

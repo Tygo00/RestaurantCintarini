@@ -9,11 +9,12 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">Da Cintarinni</a>
+  <a class="nav-logo" href="index.php">Da Cintarinni</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="menu.html">Menu</a></li>
-    <li><a href="reservering.html" class="nav-cta">Reserveer Nu</a></li>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="menu.php">Menu</a></li>
+    <li><a href="reservering.php">Reservering</a></li>
+    <li><a href="login.php" class="actief nav-cta">Inloggen</a></li>
   </ul>
 </nav>
 
@@ -28,7 +29,7 @@
   <div class="res-hero-content">
     <div class="eyebrow">Uw tafel reserveren</div>
     <h1>Welkom bij <span>Da Cintarinni</span></h1>
-    <p>Reserveer eenvoudig een tafel en geniet van een onvergetelijke Italiaanse avond in Amsterdam. We kijken ernaar uit u te verwelkomen!</p>
+    <p>Reserveer eenvoudig een tafel en geniet van een onvergetelijke Italiaanse avond in Bemmel. We kijken ernaar uit u te verwelkomen!</p>
   </div>
 </div>
 
@@ -172,7 +173,7 @@
       <div class="check">🎉</div>
       <h3>Reservering Ontvangen!</h3>
       <p>Grazie mille! Uw reservering is geregistreerd. U ontvangt binnen enkele minuten een bevestigingsmail.</p>
-      <a href="index.html" class="terug-btn">← Terug naar Home</a>
+      <a href="index.php" class="terug-btn">← Terug naar Home</a>
     </div>
   </div>
 
@@ -213,9 +214,9 @@
     </div>
     <div class="footer-col">
       <h4>Navigatie</h4>
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="reservering.html">Reservering</a>
+      <a href="index.php">Home</a>
+      <a href="menu.php">Menu</a>
+      <a href="reservering.php">Reservering</a>
     </div>
     <div class="footer-col">
       <h4>Openingstijden</h4>
@@ -230,5 +231,5 @@
       <p>✉️ info@DaCintarinni.nl</p>
     </div>
   </div>
-  <div class="footer-bottom">© 2025 Da Cintarinni – Alle rechten voorbehouden.</div>
+  <div class="footer-bottom">© 2026 Da Cintarinni – Alle rechten voorbehouden.</div>
 </footer>

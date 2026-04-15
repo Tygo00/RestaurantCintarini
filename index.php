@@ -9,11 +9,12 @@
 <body>
 
 <nav>
-  <a class="nav-logo" href="index.html">Da Cintarinni</a>
+  <a class="nav-logo" href="index.php">Da Cintarinni</a>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="menu.html">Menu</a></li>
-    <li><a href="reservering.html" class="nav-cta">Reserveer Nu</a></li>
+    <li><a href="index.php">Home</a></li>
+    <li><a href="menu.php">Menu</a></li>
+    <li><a href="reservering.php">Reservering</a></li>
+    <li><a href="login.php" class="actief nav-cta">Inloggen</a></li>
   </ul>
 </nav>
 
@@ -31,8 +32,8 @@
     <h1>Proef de <span>Passione</span><br/>van Napels</h1>
     <p>Handgemaakte pizza's gebakken in onze houtgestookte oven op 450°C. Elke hap een reis naar Italië — vers, eerlijk en vol smaak.</p>
     <div class="hero-buttons">
-      <a href="menu.html" class="btn-primary">Bekijk het Menu</a>
-      <a href="reservering.html" class="btn-outline">Maak een Reservering</a>
+      <a href="menu.php" class="btn-primary">Bekijk het Menu</a>
+      <a href="reservering.php" class="btn-outline">Maak een Reservering</a>
     </div>
   </div>
 </section>
@@ -88,7 +89,7 @@
     </div>
   </div>
   <div style="text-align:center;margin-top:2.5rem">
-    <a href="menu.html" class="btn-primary">Volledig Menu Bekijken</a>
+    <a href="menu.php" class="btn-primary">Volledig Menu Bekijken</a>
   </div>
 </section>
 
@@ -112,10 +113,13 @@
   <div class="banner-bg"></div>
   <div class="banner-content">
     <h2>Reserveer een Tafel<br/>bij <span>Da Cintarinni</span></h2>
-    <p>Geniet van een onvergetelijke avond met familie of vrienden. Reserveer snel en eenvoudig een tafel bij ons in Amsterdam.</p>
-    <a href="reservering.html" class="btn-primary">Nu Reserveren</a>
+    <p>Geniet van een onvergetelijke avond met familie of vrienden. Reserveer snel en eenvoudig een tafel bij ons in Bemmel.</p>
+    <a href="reservering.php" class="btn-primary">Nu Reserveren</a>
   </div>
 </section>
+
+<?php
+?>
 
 <!-- FOOTER -->
 <footer>
@@ -126,9 +130,9 @@
     </div>
     <div class="footer-col">
       <h4>Navigatie</h4>
-      <a href="index.html">Home</a>
-      <a href="menu.html">Menu</a>
-      <a href="reservering.html">Reservering</a>
+      <a href="index.php">Home</a>
+      <a href="menu.php">Menu</a>
+      <a href="reservering.php">Reservering</a>
     </div>
     <div class="footer-col">
       <h4>Openingstijden</h4>
@@ -143,7 +147,7 @@
       <p>✉️ info@daCintarinni.nl</p>
     </div>
   </div>
-  <div class="footer-bottom">© 2025 Da Cintarinni – Alle rechten voorbehouden.</div>
+  <div class="footer-bottom">© 2026 Da Cintarinni – Alle rechten voorbehouden.</div>
 </footer>
 
 </body>

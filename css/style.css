@@ -10,6 +10,428 @@
   padding: 0;
 }
 
+/* ============================================
+   LA FIAMMA — Login pagina (login.css)
+   ============================================ */
+ 
+/* Onderdruk de zoekbalk die in lafiamma.css fixed staat —
+   de loginpagina heeft geen zoekbalk nodig              */
+.login-pagina .search-wrap {
+  display: none;
+}
+ 
+/* Reset body voor loginpagina */
+.login-pagina {
+  margin: 0;
+  padding: 0;
+  background: #0e0905;
+  min-height: 100vh;
+}
+ 
+/* ── VOLLEDIGE PAGINA LAYOUT ── */
+.login-pagina-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 70px);
+  margin-top: 70px; /* hoogte van de nav */
+}
+ 
+/* ── LINKER HELFT ── */
+.login-links {
+  position: relative;
+  overflow: hidden;
+  background-image: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+}
+ 
+.login-links-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    145deg,
+    rgba(10, 6, 2, 0.88) 0%,
+    rgba(140, 30, 20, 0.55) 60%,
+    rgba(10, 6, 2, 0.75) 100%
+  );
+}
+ 
+.login-links-inhoud {
+  position: relative;
+  z-index: 2;
+  max-width: 420px;
+}
+ 
+.login-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  font-style: italic;
+  color: var(--goud);
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+}
+ 
+.login-links-inhoud h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+ 
+.login-links-inhoud h1 em {
+  color: var(--goud);
+  font-style: italic;
+}
+ 
+.login-links-inhoud > p {
+  font-size: 1rem;
+  color: #b0a090;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+}
+ 
+/* Voordelen lijst */
+.voordelen-lijst {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+ 
+.voordelen-lijst li {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  color: #d8c9b0;
+  font-size: 0.95rem;
+  padding: .7rem 1rem;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(212,168,67,0.15);
+  border-radius: 4px;
+}
+ 
+.v-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+ 
+/* ── RECHTER HELFT ── */
+.login-rechts {
+  background: #13100a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  border-left: 1px solid rgba(212,168,67,0.12);
+}
+ 
+/* ── CSS-ONLY TAB RADIO INPUTS ── */
+.tab-radio {
+  display: none;
+}
+ 
+/* ── FORMULIER KAART ── */
+.formulier-kaart {
+  width: 100%;
+  max-width: 420px;
+}
+ 
+/* ── TAB BALK ── */
+.tab-balk {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid rgba(212,168,67,0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+ 
+.tab-label {
+  padding: 13px;
+  text-align: center;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #6a5e50;
+  background: rgba(255,255,255,0.03);
+  transition: all .25s;
+  user-select: none;
+}
+ 
+.tab-label:hover {
+  color: #d8c9b0;
+  background: rgba(255,255,255,0.06);
+}
+ 
+/* Actieve tab via :checked
+   Structuur: radio inputs zijn directe siblings van .formulier-kaart
+   binnen .login-rechts. Gebruik ~ om siblings te selecteren.         */
+#tab-in:checked ~ .formulier-kaart .tab-balk label[for="tab-in"],
+#tab-reg:checked ~ .formulier-kaart .tab-balk label[for="tab-reg"] {
+  background: var(--rood);
+  color: #fff;
+}
+ 
+/* ── TAB PANELEN standaard verborgen ── */
+.tab-paneel {
+  display: none;
+}
+ 
+/* Inloggen paneel zichtbaar */
+#tab-in:checked ~ .formulier-kaart #paneel-in {
+  display: block;
+}
+ 
+/* Registreren paneel zichtbaar */
+#tab-reg:checked ~ .formulier-kaart #paneel-reg {
+  display: block;
+}
+ 
+/* ── FORMULIER KOP ── */
+.form-kop {
+  text-align: center;
+  margin-bottom: 1.8rem;
+}
+ 
+.form-kop h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-style: italic;
+  color: #fff;
+  margin-bottom: .3rem;
+}
+ 
+.form-kop p {
+  color: #6a5e50;
+  font-size: 0.88rem;
+}
+ 
+/* ── VELDEN ── */
+.veld-groep {
+  margin-bottom: 1.1rem;
+}
+ 
+.veld-groep label {
+  display: block;
+  font-size: 0.72rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #8a7a68;
+  margin-bottom: .45rem;
+}
+ 
+.veld-wrap {
+  position: relative;
+}
+ 
+.veld-icoon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.95rem;
+  pointer-events: none;
+  line-height: 1;
+}
+ 
+.veld-wrap input {
+  width: 100%;
+  padding: 11px 14px 11px 40px;
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(93,78,58,0.5);
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.92rem;
+  color: #f0e6d0;
+  outline: none;
+  transition: border-color .25s, box-shadow .25s;
+}
+ 
+.veld-wrap input::placeholder {
+  color: #3d3428;
+}
+ 
+.veld-wrap input:focus {
+  border-color: var(--goud);
+  box-shadow: 0 0 0 3px rgba(212,168,67,0.12);
+}
+ 
+/* Twee kolommen naast elkaar */
+.twee-kolommen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+ 
+/* ── OPTIES REGEL ── */
+.extra-opties {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.4rem;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+ 
+/* ── CUSTOM CHECKBOX ── */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  color: #8a7a68;
+  font-size: 0.85rem;
+  cursor: pointer;
+  user-select: none;
+}
+ 
+.checkbox-label input[type="checkbox"] {
+  display: none;
+}
+ 
+.checkbox-vak {
+  width: 17px;
+  height: 17px;
+  border: 1.5px solid rgba(93,78,58,0.7);
+  border-radius: 3px;
+  background: rgba(255,255,255,0.04);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all .2s;
+  font-size: 11px;
+  color: #fff;
+  font-weight: 700;
+}
+ 
+.checkbox-label input[type="checkbox"]:checked + .checkbox-vak {
+  background: var(--rood);
+  border-color: var(--rood);
+}
+ 
+.checkbox-label input[type="checkbox"]:checked + .checkbox-vak::after {
+  content: '✓';
+}
+ 
+.akkoord-label {
+  margin-bottom: 1.4rem;
+  line-height: 1.5;
+}
+ 
+.akkoord-label a {
+  color: var(--goud);
+  text-decoration: underline;
+}
+ 
+/* ── WACHTWOORD VERGETEN ── */
+.vergeten-link {
+  color: var(--goud);
+  font-size: 0.83rem;
+  text-decoration: none;
+  transition: color .2s;
+}
+.vergeten-link:hover {
+  color: #fff;
+}
+ 
+/* ── INLOGGEN KNOP ── */
+.login-knop {
+  width: 100%;
+  padding: 14px;
+  background: var(--rood);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  transition: background .25s, transform .2s;
+}
+ 
+.login-knop:hover {
+  background: var(--donkerrood);
+  transform: translateY(-2px);
+}
+ 
+/* ── SOCIAL SCHEIDING ── */
+.social-verdeler {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  color: #3d3428;
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+ 
+.social-verdeler::before,
+.social-verdeler::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(93,78,58,0.4);
+}
+ 
+/* ── SOCIAL KNOPPEN ── */
+.social-rij {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+ 
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  padding: 11px;
+  border-radius: 4px;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  border: 1.5px solid rgba(93,78,58,0.4);
+  transition: all .25s;
+  color: #8a7a68;
+  background: rgba(255,255,255,0.03);
+}
+ 
+.social-btn:hover {
+  color: #d8c9b0;
+  border-color: rgba(212,168,67,0.4);
+  background: rgba(212,168,67,0.06);
+}
+ 
+/* ── RESPONSIVE ── */
+@media (max-width: 850px) {
+  .login-pagina-wrap {
+    grid-template-columns: 1fr;
+  }
+  .login-links {
+    display: none;
+  }
+  .login-rechts {
+    border-left: none;
+    min-height: calc(100vh - 70px);
+    padding: 2rem 1.5rem;
+  }
+}
+
 :root {
   --rood:       #C0392B;
   --donkerrood: #922B21;
